@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baizhi.springboot_jsp_shiro.dao.UserDao">
+    <select id="findByUserName" parameterType="String" resultType="com.baizhi.springboot_jsp_shiro.entity.User">
+        select * from sd_user where username = #{username}
+    </select>
+    <resultMap id="userMap" type="User">
+        <id column="uid" property="id"/>
+        <result column="username" property="username"/>
+            <!--角色信息-->
+        <collection property="roles" javaType="list" ofType="Role">
+            <id column="id" property="id"/>
+            <result column="rname" property="name"/>
+        </collection>
+    </resultMap>
+    <select id="findRolesByUserName" parameterType="String" resultMap="userMap">
+        select u.id uid,u.username,r.id,r.name rname from sd_user u left join sd_user_role ur on u.id=ur.userid
+        left join sd_role r
+        on ur.roleid=r.id
+        where u.username = #{username}
+    </select>
+
+    <select id="findPermsByRoleId" parameterType="String" resultType="Perms">
+        select p.id,p.name,p.url,r.name from sd_role r
+        left join sd_role_perms rp
+        on r.id =rp.roleid
+        left join sd_perms p
+        on rp.permsid=p.id
+        where r.id=#{id}
+    </select>
+
+    <insert id="save" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+        insert into sd_user
+        values (#{id},#{username},#{password},#{salt})
+    </insert>
+
+</mapper>

@@ -1,0 +1,27 @@
+#tb{
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+    width: 90%;
+    border-collapse:collapse;
+    margin-right: 15px;
+}
+#tb td,tr{
+    font-size: 20px;
+    border: 3px solid black;
+    padding: 3px 7px 2px 7px;
+}
+#tb tr{
+    font-size: 20px;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    color: black;
+}
+a{
+    text-decoration: none;
+    color: black;
+    border-radius: 6px;
+    border:1px solid black;
+}
+body{
+    background-image: url(/img/backgrounds/10.jpg);
+}

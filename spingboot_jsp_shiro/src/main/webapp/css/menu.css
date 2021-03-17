@@ -1,0 +1,81 @@
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    overflow:hidden;
+}
+.menu{
+    width:270px;
+    height:800px;
+    overflow:hidden;
+    padding-top: 40px;
+    text-align: center;
+    background-color: #2C3B48;
+}
+.menuTitle{
+    height: 30px;
+    margin-bottom: 20px;
+}
+.menuTitle b{
+    line-height: 30px;
+    color:whitesmoke;
+    font-size:23px;
+    font-family:楷体
+}
+
+.firstMenu{
+    list-style: none; /*去除无序列表默认样式*/
+    color:#DEDFE2;
+}
+.firstMenu:hover{
+    background-color:#353F4F; /*鼠标悬浮为灰色*/
+    cursor: pointer; /*鼠标悬浮为手状*/
+}
+.firstMenu .div1{
+    width: 75%;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    text-align: left;
+    font-size: 19px;
+    margin-left: 10px;
+    font-family: 楷体;
+    font-weight: bold;
+}
+.firstMenu .div1 img{
+     margin-bottom: 5px;
+}
+
+.firstMenu .sign{
+
+     width: 38%;
+     height: 40px;
+     line-height: 40px;
+     margin-left: 180px;
+     font-size: 25px;
+}
+.firstMenu .secondMenu{
+    display: none; /*隐藏子列表*/
+    background-color: #2A323F;
+    text-align: left;
+    padding-left: 80px;
+}
+.firstMenu .secondMenu li{
+    clear: both;
+    list-style: none;
+    height:30px;
+    line-height: 30px;
+    font-size: 15px;
+    font-family: 新宋体;
+    font-weight: bold;
+
+}
+.firstMenu .secondMenu li a{
+    text-decoration: none;
+    color: white;
+
+}
+.firstMenu .secondMenu li a:hover{
+    color:cyan;
+}
